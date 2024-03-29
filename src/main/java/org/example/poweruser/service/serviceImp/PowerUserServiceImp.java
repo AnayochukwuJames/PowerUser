@@ -48,8 +48,7 @@ public class PowerUserServiceImp implements PowerUserService {
     public ResponseEntity<PowerUser> getPowerUserByPhoneNumber(String phoneNumber){
         try{
             return new ResponseEntity<>(powerUserRepository.findByPhoneNumber(phoneNumber).get(), HttpStatus.OK);
-        } catch (NoSuchElementException exception){
-            System.out.println(exception.getMessage());
+        } catch (NoSuchElementException exception){System.out.println(exception.getMessage());
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
@@ -57,9 +56,8 @@ public class PowerUserServiceImp implements PowerUserService {
     public ResponseEntity<List<PowerUser>> getAllPowerUser(){
         return new ResponseEntity<>(powerUserRepository.findAll(), HttpStatus.OK);
     }
-    public ResponseEntity<PowerUser> deletePowerUser(int id){
-        PowerUser user = powerUserRepository.findById(id).get();
-        powerUserRepository.deleteById(id);
+    public ResponseEntity<PowerUser> deletePowerUser(int id){PowerUser user = powerUserRepository
+            .findById(id).get();powerUserRepository.deleteById(id);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
