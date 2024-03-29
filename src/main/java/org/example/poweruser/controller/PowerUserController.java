@@ -1,5 +1,6 @@
 package org.example.poweruser.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.poweruser.model.PowerUser;
 import org.example.poweruser.service.PowerUserService;
@@ -15,11 +16,11 @@ public class PowerUserController {
     private final PowerUserService powerUserService;
 
     @PostMapping("/user")
-   public ResponseEntity<PowerUser> postPowerUser(@RequestBody PowerUser powerUser){
+   public ResponseEntity<PowerUser> postPowerUser(@RequestBody @Valid PowerUser powerUser){
         return powerUserService.postPowerUser(powerUser);
     }
     @PutMapping("{id}/update-user")
-    public ResponseEntity<PowerUser> updatePowerUser(@PathVariable int id, @RequestBody PowerUser powerUser){
+    public ResponseEntity<PowerUser> updatePowerUser(@Valid @PathVariable int id, @RequestBody PowerUser powerUser){
         return powerUserService.updatePowerUser(id,powerUser);
     }
     @GetMapping("user")
