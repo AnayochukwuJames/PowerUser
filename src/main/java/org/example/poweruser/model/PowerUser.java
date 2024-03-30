@@ -6,7 +6,6 @@ import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
