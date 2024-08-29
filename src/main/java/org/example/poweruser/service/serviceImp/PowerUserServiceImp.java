@@ -15,9 +15,11 @@ import java.util.NoSuchElementException;
 @Service
 public class PowerUserServiceImp implements PowerUserService {
     private final PowerUserRepository powerUserRepository;
+
     public ResponseEntity<PowerUser> postPowerUser( PowerUser powerUser ){
         return new ResponseEntity<>(powerUserRepository.save(powerUser), HttpStatus.CREATED);
     }
+
     public ResponseEntity<PowerUser> updatePowerUser(int id, PowerUser powerUser){
         PowerUser user = powerUserRepository.findById(id).get();
         user.setFirstName(powerUser.getFirstName());

@@ -28,12 +28,7 @@ public class PowerUser {
     private String lastName;
     @Column(name = "address")
     private String address;
-    //For Email(@Email)
-//    @Email
-//    @NotBlank(message = "email must not be empty")
-//    private String email;
-//    @Pattern(regexp ="\n" + "^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$")
-//    private String password;
+    private String password;
     @Column(name = "phone_number")
     @Pattern(regexp = "[0-9]{11}")
     private String phoneNumber;

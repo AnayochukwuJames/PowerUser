@@ -21,8 +21,6 @@ public class GlobalExceptionHandler {
                 fieldError.getDefaultMessage()));
         return errors;
 
-        //
-
     }
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(NoSuchFieldError.class)
